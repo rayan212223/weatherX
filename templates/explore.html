@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Us - WeatherX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gradient-to-b from-blue-400 to-blue-700 text-white" >
+
+
+    <!-- Navbar -->
+    <nav class="p-5 flex justify-between items-center bg-gray-900 shadow-md">
+        <div class="flex items-center">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="WeatherX Logo" class="h-10 w-10 mr-2"> <!-- Add your logo path here -->
+            <h1 class="text-2xl font-bold">WeatherX</h1>
+        </div>
+        <a href="/" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-700">Home</a>
+    </nav>
+
+
+<!-- Container with Background Image -->
+<div style="background-image: url('{{ url_for('static', filename='img/season1.jpg') }}');"
+     class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+
+
+    <!-- Dark Overlay for Readability -->
+    <div class="bg-black bg-opacity-50 py-16 px-6 rounded-lg">
+
+        <!-- Hero Section -->
+        <header class="text-center">
+            <h2 class="text-4xl font-bold">Explore Weather Like Never Before! 🌍</h2>
+            <p class="mt-4 text-lg">Discover insights, real-time updates, and our amazing team.</p>
+        </header>
+
+        <!-- Features Section -->
+        <section class="container mx-auto px-6 text-center mt-12">
+            <h3 class="text-3xl font-semibold mb-6">Why Choose WeatherX?</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold">☀️ Real-Time Weather</h4>
+                    <p class="mt-2">Get accurate weather updates instantly.</p>
+                </div>
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold">📍 Location-Based Data</h4>
+                    <p class="mt-2">See forecasts based on your exact location.</p>
+                </div>
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold">📊 Interactive Charts</h4>
+                    <p class="mt-2">Visualize temperature, humidity, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Facts Section -->
+        <section class="text-center py-12 mt-12">
+            <h3 class="text-3xl font-semibold mb-6">Did You Know? 🌎</h3>
+            <p id="weather-fact" class="text-lg italic">Click below for a fun weather fact!</p>
+            <button onclick="showRandomFact()" class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Show Fact</button>
+        </section>
+
+    </div>
+</div>
+
+
+
+
+    <!-- Our Team Section -->
+    <section class="text-center py-12 bg-black text-blue-800" >
+      <h3 class="text-3xl font-semibold mb-6 text-white">Meet Our Team 👨‍💻👩‍💻</h3>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-6 bg-blue-100 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold">Pekendi Kaurinta</h4>
+                <p class="mt-2">UI/UX Designer</p>
+            </div>
+            <div class="p-6 bg-blue-100 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold">Austin Jyrwa</h4>
+                <p class="mt-2">UI/UX Designer</p>
+            </div>
+            <div class="p-6 bg-blue-100 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold">Md Minhad Tuashim Ahmed</h4>
+                <p class="mt-2">UI/UX Designer</p>
+            </div>
+            <div class="p-6 bg-blue-100 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold">Rupam Das</h4>
+                <p class="mt-2">Developer</p>
+            </div>
+             <div class="p-6 bg-blue-100 rounded-lg shadow-md">
+                <h4 class="text-xl font-semibold">Rohit Sharma</h4>
+                <p class="mt-2">Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center p-6 bg-gray-900 mt-10" >
+        <p>© 2025 WeatherX. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Random Facts -->
+    <script>
+        function showRandomFact() {
+            const facts = [
+                "The highest temperature ever recorded on Earth was 134°F (56.7°C) in Death Valley, California.",
+                "A bolt of lightning is five times hotter than the sun's surface!",
+                "Snowflakes can fall at speeds of up to 9 mph (15 km/h).",
+                "The coldest temperature ever recorded was -128.6°F (-89.2°C) in Antarctica.",
+                "Tornadoes can reach speeds of over 300 mph (480 km/h)."
+            ];
+            let randomFact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById("weather-fact").innerText = randomFact;
+        }
+    </script>
+
+</body>
+</html>

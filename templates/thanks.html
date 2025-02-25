@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px;background-image:url("{{ url_for('static', filename='img/season.jpg') }}"); background-repeat:no-repeat;background-size:cover;}
+        h1 { color: #80EF80; background-color:black;display:inline-block;}
+        a { display: inline-block; margin-top: 20px; padding: 10px; background: blue; color: white; text-decoration: none; border-radius: 5px; }
+        a:hover { background: darkblue; }
+        img{
+            display:block;
+            margin:auto;
+            border-radius:10px;
+
+        }
+        marquee{
+            color:white;
+
+            font-size:1rem;
+            width:100%;
+            margin-left:0px;
+        }
+        .thanks{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+        }
+        .marq{
+            background-color:black;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="thanks">
+        <img src="{{ url_for('static', filename='img/logo.jpg') }}" >
+       <h1>Thank You,{{name}}</h1>
+       <img src="{{ url_for('static', filename='img/logo.jpg') }}" >
+    </div>
+    <div class="marq">
+    <marquee direction="left" scrollamount="10">Your query has been submitted. We'll get back to you soon.</marquee>
+    </div>
+    <a href="/">Go Back to Home</a>
+
+
+</body>
+<script>
+
+
+</html>
