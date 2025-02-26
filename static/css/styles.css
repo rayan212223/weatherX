@@ -8,10 +8,11 @@ html,body
     box-sizing: border-box;
 }
 
+
 header.masthead {
     position: relative;
     /* background: url("season.jpg") no-repeat center center; */
-    background:url('../img/season.jpg');
+    background:url('../img/coolw.jpg');
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 7rem;
@@ -122,3 +123,21 @@ footer {
   position: relative;
   padding-left: 40px;
 }
+
+
+
+
+/*.summer {*/
+/*    background-image: url('summer.jpg');*/
+/*    background-size: cover;*/
+/*}*/
+
+/*.rainy {*/
+/*    background-image: url('rainy.jpg');*/
+/*    background-size: cover;*/
+/*}*/
+
+/*.winter {*/
+/*    background-image: url('winter.jpg');*/
+/*    background-size: cover;*/
+/*}*/

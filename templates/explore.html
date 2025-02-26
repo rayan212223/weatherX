@@ -5,8 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Us - WeatherX</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
 
+
+
+
+
+
+        .whychosewx:hover{
+            transition:900ms;
+             transform:scale(1.12)
+
+        }
+
+      .backrtw {
+    position: relative;
+    transition: 300ms;
+}
+
+.backrtw:hover {
+    background-image: url('{{ url_for('static', filename='img/rtw.jpg') }}');
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.backrtw:hover .a1,
+.backrtw:hover .a2 {
+    visibility: hidden; /* Hide text completely */
+    opacity: 0;
+}
+
+.textout1 {
+    display: none;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.arrange1:hover .textout1 {
+    display: block;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+
+
+
+
+
+
+
+.backlbd {
+    position: relative;
+    transition: 300ms;
+}
+
+.backlbd:hover {
+    background-image: url('{{ url_for('static', filename='img/lbd.jpg') }}');
+    background-size: cover;
+    background-repeat:no-repeat;
+}
+
+.backlbd:hover .a1,
+.backlbd:hover .a2 {
+    visibility: hidden; /* Hide text completely */
+    opacity: 0;
+}
+
+.textout2 {
+    display: none;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.arrange2:hover .textout2 {
+    display: block;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+
+
+
+
+
+
+
+
+
+
+.backic {
+    position: relative;
+    transition: 300ms;
+}
+
+.backic:hover {
+    background-image: url('{{ url_for('static', filename='img/ic.avif') }}');
+    background-size: contain;
+
+}
+
+.backic:hover .a1,
+.backic:hover .a2 {
+    visibility: hidden; /* Hide text completely */
+    opacity: 0;
+}
+
+.textout3 {
+    display: none;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.arrange3:hover .textout3 {
+    display: block;
+    margin-top: 10px; /* Adjust spacing */
+}
+
+
+
+
+
+
+        /*.backlbd:hover{*/
+
+        /*    background-image: url('{{ url_for('static', filename='img/lbd.jpg') }}');*/
+        /*     background-size: contain;*/
+        /*     color:white;*/
+
+        /*}*/
+        /*.backic:hover{*/
+
+        /*   background-image: url('{{ url_for('static', filename='img/ic.avif') }}');*/
+        /*    background-size: contain;*/
+        /*    color:black;*/
+        /*}*/
+
+
+
+
+    </style>
 </head>
+
 <body class="bg-gradient-to-b from-blue-400 to-blue-700 text-white" >
 
 
@@ -21,7 +161,7 @@
 
 
 <!-- Container with Background Image -->
-<div style="background-image: url('{{ url_for('static', filename='img/season1.jpg') }}');"
+<div style="background-image: url('{{ url_for('static', filename='img/coolw2.jpg') }}');"
      class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
 
 
@@ -38,18 +178,44 @@
         <section class="container mx-auto px-6 text-center mt-12">
             <h3 class="text-3xl font-semibold mb-6">Why Choose WeatherX?</h3>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold">☀️ Real-Time Weather</h4>
-                    <p class="mt-2">Get accurate weather updates instantly.</p>
+
+              <div class="arrange1">
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md whychosewx backrtw" >
+                    <h4 class="text-xl font-semibold a1" >☀️ Real-Time Weather</h4>
+                    <p class="mt-2 a1">Get accurate weather updates instantly.</p>
                 </div>
-                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold">📍 Location-Based Data</h4>
-                    <p class="mt-2">See forecasts based on your exact location.</p>
+                <div class="textout1">
+                    <h4 class="text-xl font-semibold a2" >☀️ Real-Time Weather</h4>
+                    <p class="mt-2 a2">Get accurate weather updates instantly.</p>
                 </div>
-                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold">📊 Interactive Charts</h4>
-                    <p class="mt-2">Visualize temperature, humidity, and more.</p>
+              </div>
+
+
+
+              <div class="arrange2">
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md whychosewx backlbd">
+                    <h4 class="text-xl font-semibold a1">📍 Location-Based Data</h4>
+                    <p class="mt-2 a1">See forecasts based on your exact location.</p>
                 </div>
+                <div class="textout2">
+                    <h4 class="text-xl font-semibold a2">📍 Location-Based Data</h4>
+                    <p class="mt-2 a2">See forecasts based on your exact location.</p>
+                </div>
+              </div>
+
+
+              <div class="arrange3">
+                <div class="p-6 bg-white text-blue-800 rounded-lg shadow-md whychosewx backic">
+                    <h4 class="text-xl font-semibold a1">📊 Interactive Charts</h4>
+                    <p class="mt-2 a1">Visualize temperature, humidity, and more.</p>
+                </div>
+                <div class="textout3">
+                    <h4 class="text-xl font-semibold a2">📊 Interactive Charts</h4>
+                    <p class="mt-2 a2">Visualize temperature, humidity, and more.</p>
+                </div>
+              </div>
+
+
             </div>
         </section>
 
