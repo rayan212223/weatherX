@@ -1,4 +1,3 @@
-https://rohitron.pythonanywhere.com/
 # WeatherX - Real-Time Weather Application
 ## Site link-  *https://rohitron.pythonanywhere.com/* <br />
 
