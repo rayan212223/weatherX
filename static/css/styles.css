@@ -12,7 +12,7 @@ html,body
 header.masthead {
     position: relative;
     /* background: url("season.jpg") no-repeat center center; */
-    background:url('../img/coolw.jpg');
+    background:url('../img/season.jpg');
     background-size: cover;
     padding-top: 3rem;
     padding-bottom: 7rem;

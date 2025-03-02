@@ -20,7 +20,7 @@ def explore():
 
 @app.route("/thanks")
 def thanks():
-    name = request.args.get('name', 'Guest')  # Get name from URL
+    name = request.args.get('name', '')  # Get name from URL
     return render_template("thanks.html", name=name)
 
 
@@ -113,10 +113,8 @@ def index():
             temperature=temperature,pressure=pressure,humidity=humidity,city_name=city_name,wind=wind,lat=lat,lon=lon,
             Shumidity=Shumidity,Spressure=Spressure,Swind=Swind,Stemperature=Stemperature,
             Mhumidity=Mhumidity,Mpressure=Mpressure,Mwind=Mwind,Mtemperature=Mtemperature,
-            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature
-
-
-            )
+            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature,
+            cityName=city_name)
 
         except KeyError:  # If an invalid location is entered, return an error message
             city_name = 'Jorhat'
@@ -155,7 +153,8 @@ def index():
             temperature=temperature,pressure=pressure,humidity=humidity,city_name=city_name,wind=wind,lat=lat,lon=lon,
              Shumidity=Shumidity,Spressure=Spressure,Swind=Swind,Stemperature=Stemperature,
             Mhumidity=Mhumidity,Mpressure=Mpressure,Mwind=Mwind,Mtemperature=Mtemperature,
-            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature)
+            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature,
+            cityName=city_name)
 
     else:
             city_name = 'Jorhat'
@@ -192,7 +191,9 @@ def index():
             temperature=temperature,pressure=pressure,humidity=humidity,city_name=city_name,wind=wind,lat=lat,lon=lon,
              Shumidity=Shumidity,Spressure=Spressure,Swind=Swind,Stemperature=Stemperature,
             Mhumidity=Mhumidity,Mpressure=Mpressure,Mwind=Mwind,Mtemperature=Mtemperature,
-            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature)
+            Lhumidity=Lhumidity,Lpressure=Lpressure,Lwind=Lwind,Ltemperature=Ltemperature,
+            cityName=city_name
+             )
 
 
 if __name__ == '__main__':
