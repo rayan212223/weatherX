@@ -161,8 +161,31 @@
 
 
 <!-- Container with Background Image -->
-<div style="background-image: url('{{ url_for('static', filename='img/rainy.jpg') }}');"
-     class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+
+
+                             {% if temp <= 0 %}
+                                <div style="background-image: url('{{ url_for('static', filename='img/low.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+                             {% elif temp <= 10 %}
+                                 <div style="background-image: url('{{ url_for('static', filename='img/mid.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+                             {% elif temp <= 20 %}
+                                 <div style="background-image: url('{{ url_for('static', filename='img/high.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+                             {% elif temp <= 30 %}
+                                 <div style="background-image: url('{{ url_for('static', filename='img/higher.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+                            {% elif temp <= 40 %}
+                                 <div style="background-image: url('{{ url_for('static', filename='img/highest.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+                            {% else %}
+                                 <div style="background-image: url('{{ url_for('static', filename='img/scorching.jpg') }}');"
+                                 class="bg-cover bg-center bg-no-repeat min-h-screen py-16 text-white">
+
+
+
+                             {% endif %}
+
 
 
     <!-- Dark Overlay for Readability -->

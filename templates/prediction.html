@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Prediction Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('{{ url_for('static', filename='img/cool.webp') }}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .game-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Weather Prediction Game</h1>
+        <p>Current Temperature: <span id="temperature"></span>&deg;C in {{city}}</p>
+        <p>Guess the future weather!</p>
+        <input type="text" id="guess" placeholder="Enter sunny, rainy, or cloudy">
+        <button onclick="checkPrediction()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let temperature = {{temp}}; 
+        document.getElementById("temperature").textContent = temperature;
+
+        function checkPrediction() {
+            let guess = document.getElementById("guess").value.toLowerCase();
+            let actualWeather;
+
+            if (temperature < 10) {
+                actualWeather = "snowy";
+            } else if (temperature < 20) {
+                actualWeather = "cloudy";
+            } else if (temperature < 30) {
+                actualWeather = "rainy";
+            } else {
+                actualWeather = "sunny";
+            }
+
+            let result = guess === actualWeather ? "Correct!" : `Wrong! It was ${actualWeather}.`;
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+</body>
+</html>

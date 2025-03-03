@@ -6,6 +6,8 @@ import requests
 
 
 
+
+
 app = Flask(__name__)
 
 #make a route and render all the html templates in this route
@@ -13,9 +15,28 @@ app = Flask(__name__)
 
 
 
+@app.route("/prediction")
+def prediction():
+    temp = request.args.get('temp', '')
+    city = request.args.get('city', '')
+    return render_template("prediction.html",temp=temp,city=city)
+
+
 @app.route("/explore")
 def explore():
-    return render_template("explore.html")
+    # Safely convert temp to an integer with a default value of 0
+    temp = request.args.get('temp', 0)
+    try:
+        temp = int(temp)  # Convert only if it's a valid number
+    except ValueError:
+        temp = 0  # Set a fallback value if conversion fails
+
+    city = request.args.get('city', '')  # City can be an empty string safely
+    return render_template("explore.html", temp=temp, city=city)
+
+
+
+
 
 
 @app.route("/thanks")
@@ -106,6 +127,8 @@ def index():
 
 
 
+
+
             #atlast just pass the variables
 
             return render_template('home.html',condition_icon=condition_icon,clouds=clouds,description=description,wind_degree=wind_degree,
@@ -182,6 +205,11 @@ def index():
             condition_icon = json_object['weather'][0]['icon']
             feelslike = int(json_object['main']['feels_like']-273.15)
             clouds = int(json_object['clouds']['all'])
+
+
+
+
+
 
 
             #atlast just pass the variables

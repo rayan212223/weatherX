@@ -132,6 +132,18 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 <body>
@@ -155,9 +167,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#differentcities">About</a>
                     </li>
@@ -165,7 +179,10 @@
                         <a class="nav-link active" aria-current="page" href="#ContactUs">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://rohitron.pythonanywhere.com/explore">Explore</a>
+                        <a class="nav-link active" aria-current="page" href="https://rohitron.pythonanywhere.com/explore?temp={{temperature}}&city={{cityName}}">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://rohitron.pythonanywhere.com/prediction?temp={{temperature}}&city={{cityName}}">Prediction</a>
                     </li>
 
                 </ul>
@@ -175,9 +192,35 @@
 
 
 
+  <!-- #BackgroundImage -->
 
-    <!-- #BackgroundImage -->
-    <header class="masthead">
+                            {% if cityName=="Jorhat" %}
+                                  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/season.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+                            {% elif temperature <= 0 %}
+                              <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/holow.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;">
+                             {% elif temperature <= 10 %}
+                                 <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/homid.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+                             {% elif temperature<= 20 %}
+                                  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/hohigh.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+                             {% elif temperature <= 30 %}
+                               <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/hohigher.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+                            {% elif temperature <= 40 %}
+                                <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/hohighest.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+                           {% else %}
+                                  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/hoscorching.jpg') }}');
+                                background-size: cover;position: relative;padding-top: 3rem;padding-bottom: 7rem;"">
+
+
+                             {% endif %}
+
+
+
          <div id="floating-box">
 
                       <p>Feels like: {{ feelslike }}°C in {{cityName}} </p>
